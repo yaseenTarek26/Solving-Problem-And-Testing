@@ -1,7 +1,82 @@
 {
+    // ==============================
+    // ⚙️  JAVA PROJECT CONFIGURATION
+    // ==============================
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
-    ]
+    ],
+
+    // Use specific Java runtime inside WSL (adjust version if needed)
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "/usr/lib/jvm/java-17-openjdk-amd64",
+            "default": true
+        }
+    ],
+
+    // Always run and debug in integrated WSL terminal
+    "java.debug.settings.console": "integratedTerminal",
+
+    // ===================================
+    // 🧩 TERMINAL & WSL CONFIGURATION
+    // ===================================
+    "terminal.integrated.defaultProfile.windows": "WSL",
+    "terminal.integrated.profiles.windows": {
+        "WSL": {
+            "path": "C:\\\\WINDOWS\\\\System32\\\\wsl.exe",
+            "args": []
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash"
+        }
+    },
+
+    // ===================================
+    // 🧠 LANGUAGE SUPPORT SETTINGS
+    // ===================================
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.import.gradle.enabled": false,
+    "java.import.maven.enabled": true,
+    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+    "java.format.settings.profile": "GoogleStyle",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.saveActions.organizeImports": true,
+
+    // ===================================
+    // 💡 EDITOR EXPERIENCE
+    // ===================================
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "redhat.java",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "explorer.confirmDelete": false,
+
+    // ===================================
+    // 🧰 MISC SETTINGS
+    // ===================================
+    "java.trace.server": "off",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.compile.forceRebuildOnBuildFileChange": true,
+    "java.server.launchMode": "Standard",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.referencesCodeLens.enabled": true,
+    "java.implementationsCodeLens.enabled": true,
+
+    // ===================================
+    // 🐧 FORCE EXECUTION IN WSL
+    // ===================================
+    // When running or debugging Java files, use WSL as the runtime environment
+    "remote.WSL.fileWatcher.polling": true,
+    "java.server.launchMode": "Standard",
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication"
 }
